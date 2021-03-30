@@ -13,6 +13,11 @@ var pauseButton = document.getElementById("pauseButton");
 var playingStatus = document.getElementById("playingStatus");
 var score = document.getElementById("score");
 
+
+
+//generate table
+//ref.   https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Traversing_an_HTML_table_with_JavaScript_and_DOM_Interfaces
+
 function generate_table(rows, cols) {
   // get the reference for the body
   var body = document.getElementsByTagName("body")[0];
@@ -97,7 +102,7 @@ function handleFoodCollision(boxNumber) {
     SCORE += 1;
 
     theBox.classList.remove("food");
-    updateSnake();
+    updateSnake(); // show updated snake after eating food
     updateScore(); //show updated score every time after eating
     drawFood(); // draw next food after eating
   }
